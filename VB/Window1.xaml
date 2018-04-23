@@ -1,0 +1,86 @@
+﻿<Window x:Class="DXNavBarCustomTheme.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar"
+	xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    Title="Window1" Height="400" Width="400">
+    <Window.Resources>
+        <DrawingImage x:Key="groupImage">
+            <DrawingImage.Drawing>
+                <GeometryDrawing>
+                    <GeometryDrawing.Geometry>
+                        <GeometryGroup>
+                            <EllipseGeometry Center="24,24" RadiusX="12" RadiusY="12" />
+                        </GeometryGroup>
+                    </GeometryDrawing.Geometry>
+                    <GeometryDrawing.Pen>
+                        <Pen Thickness="10" Brush="Black" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="itemImage">
+            <DrawingImage.Drawing>
+                <GeometryDrawing>
+                    <GeometryDrawing.Geometry>
+                        <GeometryGroup>
+                            <EllipseGeometry Center="24,24" RadiusX="12" RadiusY="12" />
+                        </GeometryGroup>
+                    </GeometryDrawing.Geometry>
+                    <GeometryDrawing.Pen>
+                        <Pen Thickness="24" Brush="Gray" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+    </Window.Resources>
+    <DockPanel>
+        <dxc:MeasurePixelSnapper DockPanel.Dock="Right">
+            <GroupBox Header="View" VerticalAlignment="Center" Margin="10">
+                <StackPanel RadioButton.Checked="ChangeView">
+                    <RadioButton Content="ExplorerBar" IsChecked="True" />
+                    <RadioButton Content="NavigationPane" />
+                    <RadioButton Content="SideBar" />
+                </StackPanel>
+            </GroupBox>
+        </dxc:MeasurePixelSnapper>
+        <dxn:NavBarControl x:Name="navBar" MaxWidth="300" dxc:ThemeManager.ThemeName="Azure">
+            <dxn:NavBarControl.Resources>
+                <ResourceDictionary Source="/DXNavBarCustomTheme;component/CustomTheme.xaml" />
+            </dxn:NavBarControl.Resources>
+            <dxn:NavBarControl.Groups>
+                <dxn:NavBarGroup Header="Group1" ImageSource="{StaticResource groupImage}">
+                    <dxn:NavBarItem Content="Item1" IsEnabled="False" 
+                                    ImageSource="{StaticResource itemImage}" />
+                    <dxn:NavBarItem Content="Item2" 
+                                    ImageSource="{StaticResource itemImage}" />
+                    <dxn:NavBarItem Content="Item3" />
+                    <dxn:NavBarItem Content="Item4" />
+                    <dxn:NavBarItem Content="Item5" />
+                    <dxn:NavBarItem Content="Item6" />
+                    <dxn:NavBarItem Content="Item7" />
+                    <dxn:NavBarItem Content="Item8" />
+                    <dxn:NavBarItem Content="Item9" />
+                </dxn:NavBarGroup>
+                <dxn:NavBarGroup Header="Group2" ImageSource="{StaticResource groupImage}">
+                    <dxn:NavBarItem Content="Item1" />
+                    <dxn:NavBarItem Content="Item2" 
+                                    />
+                    <dxn:NavBarItem Content="Item3" />
+                </dxn:NavBarGroup>
+                <dxn:NavBarGroup Header="Group3">
+                    <dxn:NavBarItem Content="Item1" />
+                    <dxn:NavBarItem Content="Item2" 
+                                    />
+                    <dxn:NavBarItem Content="Item3" />
+                </dxn:NavBarGroup>
+                <dxn:NavBarGroup Header="Group4">
+                    <dxn:NavBarItem Content="Item1" />
+                    <dxn:NavBarItem Content="Item2" 
+                                    />
+                    <dxn:NavBarItem Content="Item3" />
+                </dxn:NavBarGroup>
+            </dxn:NavBarControl.Groups>
+        </dxn:NavBarControl>
+    </DockPanel>
+</Window>
