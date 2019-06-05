@@ -3,7 +3,7 @@
 	xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar"
     xmlns:dxnt="http://schemas.devexpress.com/winfx/2008/xaml/navbar/themekeys"
     xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
-    xmlns:dxcn="clr-namespace:DevExpress.Xpf.Core.Native;assembly=DevExpress.Xpf.Core.v13.1">
+    xmlns:dxcn="clr-namespace:DevExpress.Xpf.Core.Native;assembly=DevExpress.Xpf.Core.v11.2">
     <dx:MultiplyConverter x:Key="MultiplyConverter" />
     <ControlTemplate x:Key="{dxnt:ExplorerBarThemeKey ResourceKey=ExpandButtonTemplate}" TargetType="{x:Type dxn:ExplorerBarExpandButton}">
         <Border Background="Transparent" Margin="0,4,0,4">
